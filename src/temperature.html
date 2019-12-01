@@ -1,0 +1,26 @@
+<template>
+  <abt-alert class="d-flex justify-content-center mt-4" type="danger" show-alert.bind="temperatureAlert">
+        Unable to connect to the YoctoHub.
+  </abt-alert>
+  <require from="./blur-image"></require>
+  <div class="row d-flex justify-content-center pt-4">
+    <require from="./resources/value-converters/object-keys"></require>
+    <abt-card repeat.for="sensor of state.sensors | objectKeys" width='18rem'>
+      <canvas class="header-bg" width="250" height="70" blur-image.bind="image1"></canvas>
+      <div class="avatar">
+        <img src.bind="sensor.image_path | imageContext" crossorigin="anonymous" ref="image1"/>
+      </div>
+      <abt-card-body>
+        <abt-card-title>
+          <h5 class="name">
+            ${ sensor.name }
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          <p class="temp-reading">${ sensor.temp } ${ sensor.unit }</p>
+          <p class="target-temp">Target Temperature: ${service.sensorOneTarget} ${ temp1.unit }</p>
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+  </div>
+</template>

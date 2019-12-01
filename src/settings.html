@@ -1,0 +1,27 @@
+<template>
+    <require from="./blur-image"></require>
+
+    <section class="au-animate">
+        <h2>${heading}</h2>
+        <div class="row au-stagger">
+            <div class="col-sm-6 col-md-3 card-container au-animate">
+                <form role="form" submit.delegate="saveSettings(sensorOneName)">
+                    <label>Sensor 1 Name</label>
+                    <input type="text" value.bind="service.sensorOneName" placeholder="Sensor Name">
+                    <br/>
+                    <label>Target Temp ${service.sensorOneName}</label>
+                    <input type="text" value.bind="service.sensorOneTarget" placeholder.bind="service.sensorOneTarget">
+                </form>
+            </div>
+            <div class="col-sm-6 col-md-3 card-container au-animate">
+                <form role="form" submit.delegate="saveSettings()">
+                    <label>Sensor 2 Name</label>
+                    <input type="text" value.bind="service.sensorTwoName" placeholder="Sensor Name">
+                    <br/>
+                    <label>Target Temp ${service.sensorTwoName}</label>
+                    <input type="text" value.bind="service.sensorTwoTarget" placeholder.bind="service.sensorTwoTarget">
+                </form>
+            </div>
+        </div>
+    </section>
+</template>
