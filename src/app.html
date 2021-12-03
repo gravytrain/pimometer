@@ -1,9 +1,16 @@
 <template>
-  <require from="./nav-bar.html"></require>
+  <require from="./features/navigation/nav-bar.html"></require>
 
-  <nav-bar router.bind="router"></nav-bar>
-
-  <div class="container-fluid">
-    <router-view></router-view>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <nav-bar router.bind="router"></nav-bar>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm pt-3">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>

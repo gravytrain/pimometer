@@ -1,0 +1,13 @@
+<template bindable="router">
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand">Pimometer</span>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+          <a class="nav-link" href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</template>

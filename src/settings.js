@@ -1,15 +1,18 @@
 import {inject} from 'aurelia-framework';
-import {SettingsService} from 'settings-service';
+import { Store } from 'aurelia-store';
 
-@inject(SettingsService)
+@inject(Store)
 export class Settings {
-    heading = 'Settings';
 
-    constructor(service) {
-      this.service = service;
+    constructor(store) {
+      this.store = store;
     }
 
-    saveSettings(form) {
-        console.log(form);
+    bind() {
+      this.subscription = this.store.state.subscribe(
+        (state) => {
+          this.state = state;
+        }
+      );
     }
 }

@@ -10,6 +10,7 @@
   "dependencies": {
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.3.2",
+    "aurelia-dependency-injection": "latest",
     "aurelia-framework": "latest",
     "aurelia-store": "^1.4.0",
     "bootstrap": "^4.3.1",
@@ -18,8 +19,7 @@
     "popper.js": "^1.15.0",
     "rxjs": "^6.5.3",
     "ws": "^7.2.0",
-    "yoctolib-es2017": "^1.10.37780",
-    "aurelia-dependency-injection": "latest"
+    "yoctolib-es2017": "^1.10.37780"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

@@ -1,27 +1,65 @@
 <template>
-    <require from="./blur-image"></require>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card au-animate">
+                <div class="card-header bg-primary">
+                    <h5 class="card-title font-weight-bold">
+                        Sensor 1 Settings
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Display Name</span>
+                            </div>
+                            <input type="text" autocomplete class="form-control" placeholder="Display Name"
+                                value.bind="sensorOneDisplayName">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Target Temperature</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Enter Target Temperature"
+                                value.bind="sensorOneTargetTemp">
+                        </div>
 
-    <section class="au-animate">
-        <h2>${heading}</h2>
-        <div class="row au-stagger">
-            <div class="col-sm-6 col-md-3 card-container au-animate">
-                <form role="form" submit.delegate="saveSettings(sensorOneName)">
-                    <label>Sensor 1 Name</label>
-                    <input type="text" value.bind="service.sensorOneName" placeholder="Sensor Name">
-                    <br/>
-                    <label>Target Temp ${service.sensorOneName}</label>
-                    <input type="text" value.bind="service.sensorOneTarget" placeholder.bind="service.sensorOneTarget">
-                </form>
-            </div>
-            <div class="col-sm-6 col-md-3 card-container au-animate">
-                <form role="form" submit.delegate="saveSettings()">
-                    <label>Sensor 2 Name</label>
-                    <input type="text" value.bind="service.sensorTwoName" placeholder="Sensor Name">
-                    <br/>
-                    <label>Target Temp ${service.sensorTwoName}</label>
-                    <input type="text" value.bind="service.sensorTwoTarget" placeholder.bind="service.sensorTwoTarget">
-                </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="col-md-6">
+            <div class="card au-animate">
+                <div class="card-header bg-primary">
+                    <h5 class="card-title font-weight-bold">
+                        Sensor 2 Settings
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Display Name</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Enter Display Name"
+                                value.bind="sensorTwoDisplayName">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Target Temperature</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Enter Target Temperature"
+                                value.bind="sensorTwoTargetTemp">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-right">
+            <button class="btn btn-primary" click.delegate="canInit() && init()"> Update </button>
+        </div>
+    </div>
 </template>
